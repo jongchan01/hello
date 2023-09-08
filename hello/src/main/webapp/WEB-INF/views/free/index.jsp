@@ -56,7 +56,8 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			<a class="nav-link text-dark" href="/member/login">게시판</a>
+				<ul class="navbar-nav ml-auto">
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="/member/login">로그인</a></li>
 					<li class="nav-item"><a class="nav-link text-dark" href="/member/save">회원가입</a>

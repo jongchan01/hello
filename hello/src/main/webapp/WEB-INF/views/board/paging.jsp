@@ -4,6 +4,40 @@
 <html>
 <head>
 <title>paging</title>
+<!-- basic -->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- mobile metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<!-- site metas -->
+<title>main</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- bootstrap css -->
+<link rel="stylesheet" type="text/css"
+	href="/resources/css/bootstrap.min.css">
+<!-- style css -->
+<link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+<!-- Responsive-->
+<link rel="stylesheet" href="/resources/css/responsive.css">
+<!-- fevicon -->
+<link rel="icon" href="/resources/images/fevicon.png" type="image/gif" />
+<!-- Scrollbar Custom CSS -->
+<link rel="stylesheet"
+	href="/resources/css/jquery.mCustomScrollbar.min.css">
+<!-- Tweaks for older IEs-->
+<link rel="stylesheet"
+	href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<!-- owl stylesheets -->
+<link rel="stylesheet" href="/resources/css/owl.carousel.min.css">
+<link rel="stylesoeet" href="/resources/css/owl.theme.default.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+	media="screen">
+
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -46,8 +80,16 @@ th {
 				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
+			<div style="margin-right:15px">
+				<a class="nav-link text-dark" href="/board/paging">게시판</a>
+			</div>
+			<div>
+				<a class="nav-link text-dark" href="/board/save">글작성</a>
+			</div>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+				<ul class="navbar-nav ml-auto mb-2 mb-lg-0">
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle text-dark" role="button"
 						data-bs-toggle="dropdown" aria-expanded="false">
@@ -58,12 +100,6 @@ th {
 						</ul></li>
 					<li class="nav-item"><a class="nav-link active"
 						onclick="logout()" style="cursor: pointer;">로그아웃</a></li>
-						<li class="nav-item">
-        			  	<a class="nav-link text-dark" href="/board/paging">게시판</a>
-        			</li>
-        			<li class="nav-item">
-        			  	<a class="nav-link text-dark" href="/board/save">글작성</a>
-        			</li>
 				</ul>
 			</div>
 		</div>
@@ -78,7 +114,7 @@ th {
 				<th>내용</th>
 				<th>작성시간</th>
 				<th>조회수</th>
-				
+
 			</tr>
 			<c:forEach items="${boardList}" var="board">
 				<tr>
@@ -97,7 +133,7 @@ th {
 						</c:choose></td>
 					<td style="text-align: center;">${board.boardCreatedTime}</td>
 					<td style="text-align: center;">${board.boardHits}</td>
-					
+
 				</tr>
 			</c:forEach>
 		</table>
@@ -105,7 +141,7 @@ th {
 
 
 	<div style="text-align: center;">
-	
+
 		<c:choose>
 			<%-- 현재 페이지가 1페이지면 이전 글자만 보여줌 --%>
 			<c:when test="${paging.page<=1}">
@@ -113,7 +149,8 @@ th {
 			</c:when>
 			<%-- 1페이지가 아닌 경우에는 [이전]을 클릭하면 현재 페이지보다 1 작은 페이지 요청 --%>
 			<c:otherwise>
-				<a class="btn btn-primary" href="/board/paging?page=${paging.page-1}">이전</a>
+				<a class="btn btn-primary"
+					href="/board/paging?page=${paging.page-1}">이전</a>
 			</c:otherwise>
 		</c:choose>
 
@@ -137,7 +174,8 @@ th {
 				<span class="btn btn-secondary disabled">다음</span>
 			</c:when>
 			<c:otherwise>
-				<a class="btn btn-primary" href="/board/paging?page=${paging.page+1}">다음</a>
+				<a class="btn btn-primary"
+					href="/board/paging?page=${paging.page+1}">다음</a>
 			</c:otherwise>
 		</c:choose>
 

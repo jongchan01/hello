@@ -56,9 +56,13 @@
 				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
+			
+			<a class="nav-link text-dark" href="/board/paging">게시판</a>
+			
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle text-dark" role="button" data-bs-toggle="dropdown" aria-expanded="false"> [${sessionScope.memberName}] </a>
+				<ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle text-dark" role="button" data-bs-toggle="dropdown" aria-expanded="false"> [${sessionScope.memberName}] </a>
 						<ul class="dropdown-menu">
 							<li><a class="dropdown-item" href="/member/update" onclick="update()">내정보</a></li>
 						</ul>
@@ -66,10 +70,6 @@
 						
 					<li class="nav-item"><a class="nav-link active"
 						onclick="logout()" style="cursor: pointer;">로그아웃</a></li>
-					<li class="nav-item">
-        			  	<a class="nav-link text-dark" href="/board/paging">게시판</a>
-        			</li>
-						
 				</ul>
 			</div>
 		</div>
