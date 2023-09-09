@@ -1,4 +1,4 @@
-# project_board
+# mysql query
 
 -- 회원 테이블
 drop table if exists member_table;
