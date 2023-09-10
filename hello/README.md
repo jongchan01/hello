@@ -20,7 +20,7 @@
 	create table board_table(
    	id bigint primary key auto_increment,
    	boardWriter varchar(50),
-   	boardPass varchar(20),
+	boardPass varchar(20),
 	boardTitle varchar(50),
 	boardContents varchar(500),
     	boardCreatedTime datetime default now(),
