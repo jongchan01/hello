@@ -25,7 +25,6 @@
 	boardContents varchar(500),
     	boardCreatedTime datetime default now(),
     	boardHits int default 0,
-    	fileAttached int default 0
 	);
 
 	drop table if exists board_file_table;
